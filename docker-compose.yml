@@ -1,25 +1,26 @@
-version: "3"
-services:
-  selenium-hub:
-    image: selenium/hub
-    container_name: selenium-hub
-    ports:
-      - "4444:4444"
-  chrome:
-    image: selenium/node-chrome
-    depends_on:
-      - selenium-hub
-    environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-  automation:
-    image: ghoshasish99/azuredevops-bootcamp:latest
+--- 
+services: 
+  automation: 
     container_name: automation-test
     depends_on: 
-      - chrome	
-    environment:
-      - PAT=${PAT}
-      - GRIDURL=http://selenium-hub:4444/wd/hub
-      - ORGNAME=${ORGNAME}
-    volumes:
-      - ./Results/:/functional-test/target/
+      - chrome
+    environment: 
+      - "PAT=${PAT}"
+      - "GRIDURL=http://selenium-hub:4444/wd/hub"
+      - "ORGNAME=${ORGNAME}"
+    image: "ghoshasish99/azuredevops-bootcamp:latest"
+    volumes: 
+      - "./Results/:/functional-test/target/"
+  chrome: 
+    depends_on: 
+      - selenium-hub
+    environment: 
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    image: selenium/node-chrome
+  selenium-hub: 
+    container_name: selenium-hub
+    image: selenium/hub
+    ports: 
+      - "4444:4444"
+version: "3"
