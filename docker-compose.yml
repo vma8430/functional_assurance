@@ -15,7 +15,7 @@ services:
   automation:
     image: ghoshasish99/azuredevops-bootcamp:latest
     container_name: automation-test
-    depends_on:
+    depends_on: 
       - chrome	
     environment:
       - PAT=${PAT}
