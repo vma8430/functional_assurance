@@ -13,7 +13,7 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
   automation:
-    image: ${REGISTRY}/testdigitalshopify:latest
+    image: ghoshasish99/azuredevops-bootcamp:latest
     container_name: automation-test
     environment:
       - PAT=${PAT}

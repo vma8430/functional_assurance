@@ -17,8 +17,9 @@ stages:
     steps:
        - task: Docker@2
          inputs:
-           containerRegistry: 'Dockerhub'
+           containerRegistry: 'serviceconnection_dockerhub'
            repository: 'ghoshasish99/azuredevops-bootcamp'
+           tags: latest
            command: 'buildAndPush'
            Dockerfile: '**/Dockerfile'
            
