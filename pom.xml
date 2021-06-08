@@ -136,11 +136,11 @@
                     <useUnlimitedThreads>true</useUnlimitedThreads>  -->
                     <systemPropertyVariables>
                         <executionPlatform>AZURE_CHROME</executionPlatform>
-                        <hub>http://20.81.26.23:8080/wd/hub</hub>
+                        <hub></hub>
                         <applicationUrl>https://www.saucedemo.com/</applicationUrl>
-                        <pat>nujrjk2nis6cz245ql7uecbhzgu3owjndcd7ykgsodlmkywmup6a</pat>
-                        <organization>Workshop-APAC</organization>
-                        <project>AzureBootCamp</project>
+                        <pat></pat>
+                        <organization></organization>
+                        <project>Azure_BootCamp_Project</project>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
