@@ -7,4 +7,4 @@ RUN     mkdir /functional-test
 WORKDIR /functional-test
 COPY    . .
 RUN     mvn dependency:resolve
-CMD mvn test -Dcucumber.options="--tags @UITest" -Dpat=${PAT} -Dhub=${GRIDURL} -Dorganization=${ORGNAME}
+CMD mvn test -Dcucumber.options="--tags @UITest" -Dpat=${PAT} -Dhub=${GRIDURL} -Dproject=${PROJECTNAME} -Dorganization=${ORGNAME}
